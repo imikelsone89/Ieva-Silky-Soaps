@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Atsauksmes – {{ product.name }}{% endblock %}
+
+{% block content %}
+<h1>Atsauksmes par "{{ product.name }}"</h1>
+
+{% if reviews %}
+    <ul>
+        {% for review in reviews %}
+            <li>
+                <strong>{{ review.user_name }}:</strong><br>
+                {{ review.review_text }}<br>
+                <a href="{{ url_for('edit_review', review_id=review.id) }}" class="edit-button">Rediģēt</a>
+                <a href="{{ url_for('delete_review', review_id=review.id) }}" class="delete-button">Dzēst</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Šim produktam vēl nav atsauksmju.</p>
+{% endif %}
+
+<p><a href="{{ url_for('add_review') }}" class="back-button">Pievienot jaunu atsauksmi</a></p>
+<a href="{{ url_for('home') }}" class="back-button">Atpakaļ uz sākumu</a>
+{% endblock %}

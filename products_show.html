@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}{{product["name"]}} - Silky Soaps{% endblock %}
+{% block content %}
+<section class="product-page">
+  <div class="product-info-container">
+    <img src="{{ url_for('static', filename='images/products/' ~ product['image']) }}" alt="{{ product['name'] }}" class="product-image">
+
+    <div class="product-details">
+      <h2>{{ product["name"] }}</h2>
+      <p><strong>Cena:</strong> {{ product["price"] }} €</p>
+      <p><strong>Smarža:</strong> {{ product["scent"] }}</p>
+      <p><strong>Krāsa:</strong> {{ product["color"] }}</p>
+      <p><strong>Pieejamais daudzums:</strong> {{ product["stock"] }}</p>
+      <p><strong>Īpašības:</strong> {{ product["properties"] }}</p>
+      <p><strong>Sastāvs:</strong> {{ product["ingredients"] }}</p>
+
+      <div class="button-group">
+        <a href="{{ url_for('view_reviews', product_id=product['id']) }}" class="btn">Skatīt Atsauksmes</a>
+        <a href="{{ url_for('products') }}" class="btn secondary">Atpakaļ uz produktiem</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

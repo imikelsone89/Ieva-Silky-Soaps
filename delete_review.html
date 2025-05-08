@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Apstiprināt Atsauksmes Dzēšanu{% endblock %}
+
+{% block content %}
+<h2>Vai tiešām vēlies dzēst šo atsauksmi?</h2>
+
+<p><strong>{{ review.user_name }}:</strong></p>
+<p>{{ review.review_text }}</p>
+
+<form method="POST">
+    <button type="submit" class="delete-button">Apstiprināt dzēšanu</button>
+    <a href="{{ url_for('view_reviews', product_id=review.product_id) }}" class="back-button">Atcelt</a>
+</form>
+{% endblock %}

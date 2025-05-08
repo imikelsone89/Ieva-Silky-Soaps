@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Par mums - Silky Soaps{% endblock %}
+
+{% block content %}
+<section style="padding: 40px 20px; max-width: 1000px; margin: 0 auto;">
+  <div style="background-color: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
+
+    <h1 style="font-size: 2rem; color: #4b2e2e; margin-bottom: 20px;">Par Silky Soaps!</h1>
+
+    <h3 style="font-size: 1.3rem; color: #5a3e36; margin-top: 25px;">Kas mēs esam?</h3>
+    <p style="font-size: 1rem; color: #444; line-height: 1.7;">
+        Silky Soaps ir skolēnu mācību uzņēmums, kas specializējas rokām darinātu ziepju ražošanā. 
+        Mēs paši rūpējamies par katra produkta izgatavošanu, izmantojot augstvērtīgas dabīgās sastāvdaļas, 
+        kas bagātina mūsu ziepes ar visām labajām īpašībām, kas nepieciešamas veselīgai un starojošai ādai.
+    </p>
+
+    <h3 style="font-size: 1.3rem; color: #5a3e36; margin-top: 25px;">Mūsu produkts</h3>
+    <p style="font-size: 1rem; color: #444; line-height: 1.7;">
+        Mūsu produkti ir rūpīgi izstrādātas ziepes, kas piemērotas lietošanai uz rokām, sejas un ķermeņa. 
+        Ziepes tiek bagātinātas ar dabīgām un barojošām izejvielām, piemēram, kazas pienu, šī sviestu un kokosriekstu eļļu. 
+        Papildus ziepēm mēs piedāvājam arī skrubjus un ķermeņa kopšanas produktus, kā arī īpašus komplektus un mini ziepes — ideāli ceļojumiem.
+    </p>
+
+    <h3 style="font-size: 1.3rem; color: #5a3e36; margin-top: 25px;">Mūsu mērķis</h3>
+    <p style="font-size: 1rem; color: #444; line-height: 1.7;">
+        Silky Soaps mērķis ir nodrošināt vislabākos produktus, kas ir ne tikai dabiski, bet arī videi draudzīgi, 
+        kā arī palīdzēt cilvēkiem rūpēties par savu ādu ikdienā. Mēs ticam, ka dabas spēks ir vislabākā atbilde uz veselīgas ādas kopšanu!
+    </p>
+
+    <h2 style="font-size: 1.5rem; margin-top: 50px; color: #4b2e2e;">Mūsu komanda</h2>
+    <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin: 30px 0;">
+      <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='images/megija.jpg') }}" alt="Megija" style="width: 160px; height: 160px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.08);">
+        <p style="margin-top: 10px; font-weight: 600;">Megija</p>
+      </div>
+      <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='images/ieva.jpg') }}" alt="Ieva" style="width: 160px; height: 160px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.08);">
+        <p style="margin-top: 10px; font-weight: 600;">Ieva</p>
+      </div>
+    </div>
+
+    <h2 style="font-size: 1.5rem; color: #4b2e2e; margin-top: 40px;">Mūsu sociālie tīkli</h2>
+    <ul style="list-style: none; padding-left: 0; font-size: 1rem;">
+      <li><strong>Instagram:</strong> <a href="https://www.instagram.com/silkysoaps_smu/" target="_blank">silkysoaps_smu</a></li>
+      <li><strong>Facebook:</strong> <a href="https://www.facebook.com/search/top?q=silkysoaps.smu&locale=lv_LV" target="_blank">silkysoaps.smu</a></li>
+      <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@silkysoaps_smu" target="_blank">@silkysoaps_smu</a></li>
+      <li><strong>SMU Katalogs:</strong> <a href="https://jalatvia.lv/katalogs/silky-soaps" target="_blank">Silky Soaps katalogs</a></li>
+    </ul>
+
+  </div>
+</section>
+{% endblock %}

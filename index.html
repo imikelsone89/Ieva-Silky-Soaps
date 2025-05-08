@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %} Silky Soaps {% endblock %}
+{% block content %}
+
+<section style="padding: 5vw 4vw; max-width: 1000px; margin: 0 auto; box-sizing: border-box;">
+  <div style="background-color: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); box-sizing: border-box;">
+
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center;">
+      <!-- Text Content -->
+      <div style="flex: 1 1 280px; min-width: 0;">
+        <h1 style="font-size: 2rem; color: #4b2e2e;">Laipni lūdzam "Silky Soaps"!</h1>
+        <p style="font-size: 1.1rem; color: #555;">
+            Mēs piedāvājam ar rokām darinātas ziepes, kas rūpējas par Jūsu ādu un sajūtām.
+            Izvēlieties no dabīgām sastāvdaļām veidotām ziepēm, kas smaržo tik labi, kā tās izskatās!
+            Vairāk informācija sadaļā "Par mums".
+        </p>
+      </div>
+
+      <!-- Logo Image -->
+      <div style="flex-shrink: 0; text-align: center;">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Silky Soaps Logo"
+             style="width: 160px; height: 160px; border-radius: 12px; object-fit: cover; max-width: 100%;">
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center;">
+      <h2 style="font-size: 1.5rem; color: #4b2e2e;">Ko saka mūsu klienti?</h2>
+
+      {% if reviews %}
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 20px;">
+        {% for review in reviews %}
+        <div style="background-color: #f9f9f9; border-radius: 10px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-size: 0.95rem;">
+          <h3 style="color: #5a3e36; margin-top: 0; font-size: 1.1rem;">{{ review.user_name }}</h3>
+          <p style="margin: 6px 0;"><strong>Par produktu:</strong> <em>{{ review.product_name }}</em></p>
+          <p style="color: #444;">{{ review.review_text }}</p>
+          <a href="{{ url_for('view_reviews', product_id=review.product_id) }}" class="edit-button" style="margin-top: 8px; display: inline-block; font-size: 0.9rem;">
+              Skatīt visas atsauksmes
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p style="text-align: center; color: #888; font-size: 0.95rem; margin-top: 20px;">Vēl nav nevienas atsauksmes.</p>
+      {% endif %}
+
+      <div style="margin-top: 30px; text-align: center;">
+        <a href="{{ url_for('add_review') }}" class="edit-button"
+           style="
+             font-size: 0.95rem;
+             padding: 10px 16px;
+             display: inline-block;
+             max-width: 100%;
+             box-sizing: border-box;
+             background-color: #e7d7cf;
+             border-radius: 8px;
+             text-decoration: none;
+             color: #4b2e2e;
+             white-space: nowrap;
+             overflow: hidden;
+             text-overflow: ellipsis;
+           ">
+          Pievienot Atsauksmi
+        </a>
+      </div>
+
+  </div>
+</section>
+
+{% endblock %}

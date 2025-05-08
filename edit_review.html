@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Rediģēt Atsauksmi{% endblock %}
+
+{% block content %}
+<h1>Rediģēt Atsauksmi</h1>
+
+<form method="POST">
+    <p>
+        <label for="user_name">Tavs vārds:</label>
+        <input type="text" id="user_name" name="user_name" value="{{ review.user_name }}" required>
+    </p>
+    <p>
+        <label for="review_text">Atsauksme:</label>
+        <textarea id="review_text" name="review_text" rows="4" required>{{ review.review_text }}</textarea>
+    </p>
+    <p>
+        <button type="submit">Saglabāt izmaiņas</button>
+        <a href="{{ url_for('view_reviews', product_id=review.product_id) }}" class="back-button">Atcelt</a>
+    </p>
+</form>
+{% endblock %}

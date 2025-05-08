@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Produkti - Silky Soaps{% endblock %}
+{% block content %}
+
+    <h1>Produkti</h1>
+    <div class="products-list">
+        {% for product in products %}
+        <a class="products-item" href="{{ url_for('products_show', product_id=product.id) }}">
+            <img src="{{ url_for('static', filename='images/products/' ~ product['image']) }}" alt="{{ product['name'] }}">
+            <div class="products-name">{{ product["name"] }}</div>
+            <div class="products-price">{{ product["price"] or "Not Available" }} €</div>
+        </a>
+        {% endfor %}
+    </div>
+
+{% endblock %}
