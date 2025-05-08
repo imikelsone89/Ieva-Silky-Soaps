@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Apstiprināt Atsauksmes Dzēšanu{% endblock %}
+
+{% block content %}
+<section style="padding: 40px 20px; max-width: 800px; margin: 0 auto; box-sizing: border-box;">
+  <div style="background-color: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
+
+    <h2 style="color: #4b2e2e; font-size: 1.5rem; margin-bottom: 20px;">Vai tiešām vēlies dzēst šo atsauksmi?</h2>
+
+    <p style="font-weight: 600; color: #5a3e36;">{{ review.user_name }}:</p>
+    <p style="color: #444; background-color: #fafafa; padding: 12px; border-radius: 8px;">{{ review.review_text }}</p>
+
+    <form method="POST" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px;">
+      <button type="submit" class="delete-button">Apstiprināt dzēšanu</button>
+      <a href="{{ url_for('view_reviews', product_id=review.product_id) }}" class="back-button">Atcelt</a>
+    </form>
+
+  </div>
+</section>
+{% endblock %}
